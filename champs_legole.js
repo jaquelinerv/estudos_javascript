@@ -2,36 +2,70 @@ let champs = [
   {
     name: "Lux",
     vida: 2000,
-    ligacaoDaLuz: 200,
-    barreiraPrismatica: 0,
-    singularidadeLucente: 600,
-    centelhaFinal: 800,
+    q: {
+      nome: "ligacaoDaLuz",
+      dano: 200,
+    },
+    w: {
+      nome: "barreiraPrismatica",
+      dano: 0,
+    },
+    e: {
+      nome: "singularidadeLucente",
+      dano: 600,
+    },
+    r: {
+      nome: "centelhaFinal",
+      dano: 800,
+    },
   },
   {
     name: "Zed",
     vida: 2500,
-    shurikenLaminado: 300,
-    sombraViva: 0,
-    corteSombrio: 700,
-    marcaFatal: 500,
+    q: {
+      nome: "shurikenLaminado",
+      dano: 300,
+    },
+    w: {
+      nome: "sombraViva",
+      dano: 0,
+    },
+    e: {
+      nome: "corteSombrio",
+      dano: 700,
+    },
+    r: {
+      nome: "marcaFatal",
+      dano: 500,
+    },
   },
   {
     name: "Caitlyn",
     vida: 1900,
-    pacificadoraDePiltover: 200,
-    armadilhaMecanicaYordle: 300,
-    redeCalibre: 500,
-    asNaManga: 800,
+    q: {
+      nome: "pacificadoraDePiltover",
+      dano: 200,
+    },
+    w: {
+      nome: "armadilhaMecanicaYordle",
+      dano: 300,
+    },
+    e: {
+      nome: "redeCalibre",
+      dano: 500,
+    },
+    r: {
+      nome: "asNaManga",
+      dano: 800,
+    },
   },
 ];
 
-let comboCompletoLux =
-  champs[0].ligacaoDaLuz +
-  champs[0].singularidadeLucente +
-  champs[0].centelhaFinal;
+let comboCompletoLux = champs[0].q.dano + champs[0].e.dano + champs[0].r.dano;
 
 let vidaRestanteCaitlyn = champs[2].vida - comboCompletoLux;
 
 let exibirVidaRestanteCaitlyn = `Lux combou fofo a Caitlyn causando ${comboCompletoLux}. Caitlyn ficou com ${vidaRestanteCaitlyn} de vida.`;
 
 console.log(exibirVidaRestanteCaitlyn);
+//criar condicional pra qnd o campeão morrer. ternário. -> pesquisar -> vida negativa = morto
