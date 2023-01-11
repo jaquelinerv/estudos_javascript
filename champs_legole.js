@@ -41,7 +41,7 @@ let champs = [
   },
   {
     name: "Caitlyn",
-    vida: 1900,
+    vida: 1600,
     q: {
       nome: "pacificadoraDePiltover",
       dano: 200,
@@ -65,7 +65,9 @@ let comboCompletoLux = champs[0].q.dano + champs[0].e.dano + champs[0].r.dano;
 
 let vidaRestanteCaitlyn = champs[2].vida - comboCompletoLux;
 
-let exibirVidaRestanteCaitlyn = `Lux combou fofo a Caitlyn causando ${comboCompletoLux}. Caitlyn ficou com ${vidaRestanteCaitlyn} de vida.`;
+let campeaoMorreu =
+  vidaRestanteCaitlyn == 0
+    ? `Lux combou fofo a Caitlyn causando ${comboCompletoLux} de dano. Caitlyn ficou com ${vidaRestanteCaitlyn} de vida e MÓRREU`
+    : `Lux combou fofo a Caitlyn causando ${comboCompletoLux}. Caitlyn ficou com ${vidaRestanteCaitlyn} de vida e ta VIVINHA da Silva`;
 
-console.log(exibirVidaRestanteCaitlyn);
-//criar condicional pra qnd o campeão morrer. ternário. -> pesquisar -> vida negativa = morto
+console.log(campeaoMorreu);
